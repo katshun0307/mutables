@@ -1,0 +1,5 @@
+(library
+(name mutables)
+(modules mutables)
+(public_name mutables)
+(libraries core))

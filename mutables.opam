@@ -1,0 +1,15 @@
+opam-version: "2.0"
+name: "mutables"
+version: "0.1"
+synopsis: "mutable data structures"
+description: """
+Mutable data structures such as Que, Stack, and Dict
+"""
+maintainer: "Shuntaro Katsuda"
+authors: "Shuntaro Katsuda"
+license: "MIT"
+homepage: ""
+bug-reports: ""
+dev-repo: ""
+depends: [ "ocaml" "ocamlfind" "core" ]
+build: ["dune" "build" "-p" name]
