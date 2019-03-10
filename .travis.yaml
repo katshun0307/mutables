@@ -1,0 +1,19 @@
+language: python
+python:
+  - '3.5'
+install: "bash -ex .travis-ocaml.sh; opam install core dune odoc; "
+env:
+  - OCAML_VERSION=4.06
+script: "opam install ."
+
+before_deploy: 
+  - dune build @doc
+
+deploy: 
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: ./_build/default/_doc/_html 
+  on:
+    branch: master
