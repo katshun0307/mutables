@@ -1,4 +1,5 @@
 language: python
+os: osx
 python:
   - '3.5'
 install: "bash -ex .travis-ocaml.sh; opam install core dune odoc -y; eval $(opam env)"
@@ -19,5 +20,8 @@ deploy:
   github-token: $GITHUB_TOKEN 
   keep-history: true
   local-dir: ./_build/default/_doc/_html
+  repo: katshun0307/katshun0307.github.io
   on:
     branch: master
+  target_branch: master
+  deployment-file: ./docs/mutables
