@@ -1,7 +1,7 @@
 language: python
 python:
   - '3.5'
-install: "yes | bash -ex .travis-ocaml.sh; opam install core dune odoc -yes"
+install: "yes | bash -ex .travis-ocaml.sh; opam install core dune odoc -y"
 env:
   - OCAML_VERSION=4.06
 script: "opam install . -y"
