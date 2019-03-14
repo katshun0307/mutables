@@ -2,6 +2,7 @@ language: python
 install: "bash -ex .travis-ocaml.sh; opam install core dune odoc -y; eval $(opam env)"
 env:
   - OCAML_VERSION=4.06
+  - upload_subdir=docs
 script: "opam install . -y"
 
 branches: 
@@ -10,15 +11,16 @@ branches:
 
 before_deploy:
   - dune build @doc
+  - mkdir -p upload_dir/$upload_subdir
+  - cp -r ./_build/default/_doc/_html/mutables ./upload_dir/$upload_subdir/
 
 deploy: 
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN 
   keep-history: true
-  local-dir: ./_build/default/_doc/_html
+  local-dir: ./upload_dir
   repo: katshun0307/katshun0307.github.io
   on:
     branch: master
   target_branch: master
-  deployment-file: ./docs/mutables
