@@ -1,4 +1,4 @@
-language: python
+language: c
 install: "bash -ex .travis-ocaml.sh; opam install core dune odoc -y; eval $(opam env)"
 env:
   - OCAML_VERSION=4.06
@@ -12,7 +12,7 @@ branches:
 before_deploy:
   - dune build @doc
   - mkdir -p upload_dir/$upload_subdir
-  - cp -r ./_build/default/_doc/_html/mutables ./upload_dir/$upload_subdir/
+  - cp -r ./_build/default/_doc/_html ./upload_dir/$upload_subdir/
 
 deploy: 
   provider: pages
