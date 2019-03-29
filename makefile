@@ -5,3 +5,6 @@ install:
 
 mutables: mutables.ml
 	dune build mutables.cmxa
+
+test: test.ml
+	dune runtest

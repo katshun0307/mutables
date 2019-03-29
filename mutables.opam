@@ -5,7 +5,7 @@ synopsis: "mutable data structures"
 description: """
 Mutable data structures such as Que, Stack and Dict
 """
-maintainer: "Shuntaro Katsuda"
+maintainer: "shunten3@gmail.com"
 authors: "Shuntaro Katsuda"
 license: "MIT"
 homepage: "https://github.com/katshun0307/mutables"

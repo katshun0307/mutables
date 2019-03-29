@@ -3,3 +3,14 @@
 (modules mutables)
 (public_name mutables)
 (libraries core))
+
+(test 
+(name test)
+(modules test)
+(libraries ounit mutables)
+)
+
+; (executable
+; (name test)
+; (modules test)
+; (libraries ounit mutables))
